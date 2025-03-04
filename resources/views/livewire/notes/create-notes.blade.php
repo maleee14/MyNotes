@@ -31,14 +31,14 @@ new class extends Component {
 }; ?>
 
 <div>
-    <form wire::submit="store" class="space-y-4">
+    <form wire:submit="store" class="space-y-4">
         @csrf
         <x-input wire:model='title' label='Note Title' placeholder="it's been a greate day" />
         <x-textarea wire:model='body' label='Your Note' placeholder="Share all your toughts with your friends" />
         <x-input icon="user" wire:model='recipient' label='Recipient' placeholder="yourfriend@gmail.com" />
         <x-input icon="calendar" wire:model='send_date' type="date" label='Send Date' />
         <div class="pt-4">
-            <x-button indigo wire:click='store' right-icon="pencil-square" spinner>Schedule Note</x-button>
+            <x-button type="submit" flat indigo right-icon="pencil-square" spinner>Schedule Note</x-button>
         </div>
         <x-errors />
     </form>
